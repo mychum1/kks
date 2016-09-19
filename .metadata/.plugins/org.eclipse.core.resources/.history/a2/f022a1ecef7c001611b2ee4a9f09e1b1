@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/">
+<!-- "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> -->
+<mapper namespace="onlinecontent.mybatis.OnlineContent">
+<!-- 쿼리문 입력 -->
+<!--   <insert id="insertBoard" parameterClass="BoardDTO">
+    insert into board_home values (board_home_seq.nextval,#writer#,#email#, #subject#,
+    #passwd#, sysdate,0,#content#,#ip#)
+  </insert> -->
+	
+<!-- 		<select id="listBoard" resultType="BoardDTO"> 
+		select * from board_home order by num desc  
+	</select>
+	<insert id="insertBoard" parameterType="BoardDTO">
+	insert into board values(board_seq.nextval,#{writer},#{email},#{subject},#{passwd},sysdate,0,#{content},#{ip})
+</insert>
+	//<select id="getBoard" parameterType="int" resultType= --> -->
+	 <!-- parameterType="int" -->
+	 <!-- java.util.Map -->
+	<insert id="insertContent" parameterType="">
+		insert into WN_VIDEO values (0,0,#{0.4},#{0.3})
+	</insert>
+</mapper>

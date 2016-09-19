@@ -1,0 +1,118 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+ <link rel="stylesheet" href="skin/functional.css">
+<style>
+
+.flowplayer {
+	margin-bottom: 80px;
+}
+/* discourage no-op clicks on player area */
+.flowplayer * {
+	cursor: default !important;
+}
+/* the countdown area */
+.flowplayer.aside-time .fp-time {
+	top: 110%; /* below player */
+	left: 20px;
+	width: 8em;
+	height: 4ex;
+	padding: 2ex 0 0 1em;
+	background-color: #333;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	-webkit-box-shadow: 0 0 15px #000;
+	-moz-box-shadow: 0 0 15px #000;
+	box-shadow: 0 0 15px #000;
+}
+/* hide duration and elapsed time */
+.flowplayer.aside-time .fp-duration, .flowplayer.aside-time .fp-elapsed
+	{
+	display: none;
+}
+/* always show remaining time */
+.flowplayer .fp-remaining {
+	display: block;
+	font-size: 200%;
+}
+/* hide re-play button during redirect */
+.is-finished.flowplayer .fp-ui {
+	background-image: none;
+}
+
+/* logo always visible */
+.flowplayer .fp-logo {
+	display: block;
+	opacity: 1 !important;
+}
+
+/* custom context menu */
+.flowplayer .fp-context-menu .heading {
+	font-weight: bold;
+}
+
+.flowplayer .fp-context-menu a {
+	cursor: pointer !important;
+}
+</style>
+
+   <!-- for video tag based installs flowplayer depends on jQuery 1.7.2+ -->
+   <script src="jquery-1.11.2.min.js"></script>
+
+   <!-- include flowplayer -->
+   <script src="flowplayer.min.js"></script>
+<script>
+	window.onload = function() {
+		var time = 0;
+		flowplayer("#player", {
+			autoplay : true,
+			keyboard : false,
+			fullscreen : true,
+			embed : true,
+			ratio : 1 / 10,
+			logo : "https://flowplayer.org/media/img/mylogo.png",
+			key : "$130763224349944, $863732616083910",
+			clip : {
+				hlsjs : {
+					// let hlsjs plugin pick optimal quality before playback starts
+					startLevel : -1
+				},
+				sources : [ {
+					type : "video/mp4",
+					src : "movie/sample2.mp4"
+				}
+
+				]
+			}
+
+		}).on("pause", function(e, api) {
+			// to avoid getting stuck on devices which do not allow autoplay
+			// we delay disabling the api
+			api.disable(true);
+
+		});
+		var time = $f("player").getTime();
+		var time2 = 0;
+	};
+</script>
+<%@ include file="../../top.jsp"%>
+<!-- css 는 밑에 링크 파일에!! -->
+<link href="css/usercont_detail.min.css" rel="stylesheet">
+<!-- 경숙이 파트 (인강 상세보기) -->
+<!-- 상단 메뉴바가 css로 인해서 윗부분이 겹쳐서 div로  style="padding: px" 줌 -->
+<div style="padding:50px">
+인강 상세페이지.먼저 여기서 해보자!
+cont_detail.content
+         <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+               <img src="http://placehold.it/800x500" alt="">
+            </div>
+            <div id="h-div" class="flowplayer play-button no-hover">
+            <video width="400" height="600" controls>
+            	<source src="C:\\Users\\고경숙\\Desktop\\sample.mp4" type="video/mp4">
+            </video>
+            </div>
+         </div>
+</div>
+
+<%@ include file="../../bottom.jsp"%>

@@ -1,0 +1,62 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<%@ include file="../../top.jsp"%>
+<!-- css 는 밑에 링크 파일에!! -->
+<link href="css/usercont_detail.min.css" rel="stylesheet">
+<!-- 경숙이 파트 (인강 상세보기) -->
+<!-- 상단 메뉴바가 css로 인해서 윗부분이 겹쳐서 div로  style="padding: px" 줌 -->
+<!DOCTYPE html>
+<html>
+<!-- 1. skin -->
+<link rel="stylesheet"
+   href="//releases.flowplayer.org/5.4.6/skin/functional.css">
+<!-- 2. jquery library -->
+<script src="jquery.min.js"></script>
+<!-- 3. flowplayer -->
+<script src="flowplayer.min.js"></script>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+</head>
+<body style="margin: 0px">
+<script>
+	var player=flowplayer("player","../player/flowplayer-3.2.13.swf",{
+		
+		clip:{
+			url:'mp4:'+sample2,
+			provider: 'rtmp'
+		},plugins:{
+			rtmp:{
+				url:'../player/flowplayer-3.2.13.swf',
+				
+				
+			}
+			
+		}
+		
+	});
+	
+	player.onStart(function(){
+		 var time = $f("player").getTime();
+		 out.println(time);
+		 System.out.println(time);
+		console.log(time);
+	})
+</script>
+<body>
+<div style="padding:50px">
+인강 상세페이지.먼저 여기서 해보자!
+cont_detail.content
+         <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+               <img src="http://placehold.it/800x500" alt="">
+            </div>
+            <div class="flowplayer" data-swf="flowplayer.swf" data-ratio="0.4167">
+            <video width="400" height="600" controls>
+            	<source src="C:\\Users\\고경숙\\Desktop\\sample.mp4" type="video/mp4">
+            </video>
+            </div>
+         </div>
+</div>
+</body>
+<%@ include file="../../bottom.jsp"%>

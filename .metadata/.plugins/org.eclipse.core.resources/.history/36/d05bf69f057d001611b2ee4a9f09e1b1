@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ include file="../../top.jsp"%>
+<!-- css 는 밑에 링크 파일에!! -->
+<link href="css/usercont_detail.min.css" rel="stylesheet">
+<!-- 경숙이 파트 (인강 상세보기) -->
+<!-- 상단 메뉴바가 css로 인해서 윗부분이 겹쳐서 div로  style="padding: px" 줌 -->
+<div style="padding:50px">
+인강 상세페이지.먼저 여기서 해보자!
+cont_detail.content
+         <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+               <img src="http://placehold.it/800x500" alt="">
+            </div>
+            <video width="400" height="600" controls>
+            	<source src="C:\\Users\\고경숙\\Desktop\\sample.mp4" type="video/mp4">
+            </video>
+         </div>
+</div>
+
+<%@ include file="../../bottom.jsp"%>
